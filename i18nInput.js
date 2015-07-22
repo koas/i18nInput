@@ -58,14 +58,13 @@ Options: you can pass an object to override the default plugin options.
 					i.attr("data-src", o.attr("id"));
 					i.addClass("i18ninputflag");
 					i.css("margin-left", "3px");
-					i.css("border", "1px solid #fff");
 					i.attr("src", options.imgPath + lang + "." + options.imgExt);
 					i.click(fn.flagClicked);
 					d.append(i);
 
 					if (lang == options.defaultLang)
 					{
-						i.css("border-bottom", "5px solid #fff");
+						i.css("margin-bottom", "5px");
 						o.val(langData[lang]);
 						o.attr("data-currentLang", lang);
 					}
@@ -95,8 +94,8 @@ Options: you can pass an object to override the default plugin options.
 				var langData = jQuery.parseJSON(original.val());
 				item.val(langData[lang]);
 
-				$(this).parent().find(".i18ninputflag").css("border", "1px solid #fff");
-				$(this).css("border-bottom", "5px solid #fff");
+				$(this).parent().find(".i18ninputflag").css("margin-bottom", "0");
+				$(this).css("margin-bottom", "5px");
 				item.focus();
 			},
 			saveData : function(item)
